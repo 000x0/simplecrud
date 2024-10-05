@@ -1,10 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require('cors')
 const morgan = require("morgan");
 const produtoRoute = require("./routes/product.route.js");
 const app = express();
 
 //Middlewares
+app.use(cors())
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
